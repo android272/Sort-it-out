@@ -1,9 +1,11 @@
 public class BubbleSort {
     public static int[] sort(int[] ints) {
-        if(ints[0] > ints[1]) {
-            int temp = ints[1];
-            ints[1] = ints[0];
-            ints[0] = temp;
+        for(int i = 1; i < ints.length; i++) {
+            if (ints[i - 1] > ints[i]) {
+                int temp = ints[i];
+                ints[i] = ints[i - 1];
+                ints[i -1] = temp;
+            }
         }
         return ints;
     }
