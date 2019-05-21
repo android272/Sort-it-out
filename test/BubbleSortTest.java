@@ -32,4 +32,10 @@ public class BubbleSortTest {
     public void When_Bubble_Sort_Is_Passed_An_Unsorted_Array_Of_Length_Three_It_Returns_An_Descending_Sorted_Array() {
         assertArrayEquals(new int[]{3, 2, 1}, BubbleSort.sortDescending(new int[] {1, 3, 2}));
     }
+
+    @Test
+    public void When_Bubble_Sort_Is_Passed_An_Unsorted_Array_Of_Length_Four_It_Returns_An_Descending_Sorted_Array() {
+        assertArrayEquals(new int[]{4, 3, 2, 1}, BubbleSort.sortDescending(new int[] {1, 3, 2, 4}));
+        assertArrayEquals(new int[]{4, 3, 2, 1}, BubbleSort.sortDescending(new int[] {3, 1, 2, 4}));
+    }
 }
