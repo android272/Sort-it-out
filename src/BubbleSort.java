@@ -13,6 +13,11 @@ public class BubbleSort {
     }
 
     public static int[] sortDescending(int[] ints) {
+        if (ints[0] < ints[1]) {
+            int temp = ints[0];
+            ints[0] = ints[1];
+            ints[1] = temp;
+        }
         return ints;
     }
 }
