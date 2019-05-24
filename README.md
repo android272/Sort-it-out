@@ -7,6 +7,6 @@ There are various way to sort data some are more efficient than others, this is 
 ### What I learned
 
 - **Big O Notation**
-- Profiling
+- **Profiling** code
 - Test Driven Development **TDD**
 - Version Control with **git**
