@@ -15,4 +15,11 @@ public class SelectionSortTest {
         assertEquals(1, SelectionSort.findSmallestIndex(new int[] { 3, 2, 1 }));
         assertEquals(1, SelectionSort.findSmallestIndex(new int[] { 4, 3, 2, 1 }));
     }
+
+    @Test
+    public void When_Swap_Is_Passed_Two_Indicies_Of_An_Array_Swap_Them() {
+        assertArrayEquals(new int[] { 1, 2, 5, 8 }, SelectionSort.swap(new int[] { 8, 2, 5, 1 }, 0, 3));
+        assertArrayEquals(new int[] { 8, 5, 2, 1 }, SelectionSort.swap(new int[] { 8, 2, 5, 1 }, 1, 2));
+        assertArrayEquals(new int[] { 8, 1, 5, 2 }, SelectionSort.swap(new int[] { 8, 2, 5, 1 }, 1, 3));
+    }
 }

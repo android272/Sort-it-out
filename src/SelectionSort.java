@@ -17,4 +17,12 @@ public class SelectionSort {
         }
         return ints[0];
     }
+
+    public static int[] swap(int[] ints, int firstIndex, int secondIndex) {
+        int temp = ints[firstIndex];
+        ints[firstIndex] = ints[secondIndex];
+        ints[secondIndex] = temp;
+
+        return ints;
+    }
 }
