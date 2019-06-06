@@ -8,4 +8,11 @@ public class InsertionSortTest {
         assertArrayEquals(new int[] { 1, 2, 3 }, InsertionSort.Sort(new int[] { 1, 2, 3 }));
         assertArrayEquals(new int[] { 1, 2, 3, 4 }, InsertionSort.Sort(new int[] { 1, 2, 3, 4 }));
     }
+
+    @Test
+    public void When_Insertion_Sort_Is_Passed_An_Unsorted_Array_It_Returns_A_Sorted_Array() {
+        assertArrayEquals(new int[] { 1, 2 }, InsertionSort.Sort(new int[] { 2, 1 }));
+        assertArrayEquals(new int[] { 1, 2, 3 }, InsertionSort.Sort(new int[] { 3, 1, 2 }));
+        assertArrayEquals(new int[] { 1, 2, 3, 4 }, InsertionSort.Sort(new int[] { 3, 4, 2, 1 }));
+    }
 }
