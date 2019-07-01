@@ -1,3 +1,7 @@
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
 public class MergeSort {
     public static int[] Sort(int[] ints) {
         divideArray(ints, 0, ints.length - 1);
@@ -25,29 +29,27 @@ public class MergeSort {
 
         while (dataStart <= midPoint && dataEnd <= end) {
             if (data[dataStart] < data[dataEnd]) {
-                workspace[workspaceIndex] = data[dataStart];
-                workspaceIndex++;
-                dataStart++;
+                workspace[workspaceIndex++] = data[dataStart++];
             } else {
-                workspace[workspaceIndex] = data[dataEnd];
-                workspaceIndex++;
-                dataEnd++;
+                workspace[workspaceIndex++] = data[dataEnd++];
             }
         }
 
         while (dataStart <= midPoint) {
-            workspace[workspaceIndex] = data[dataStart];
-            workspaceIndex++;
-            dataStart++;
+            workspace[workspaceIndex++] = data[dataStart++];
         }
 
         while (dataEnd <= end) {
-            workspace[workspaceIndex] = data[dataEnd];
-            workspaceIndex++;
-            dataEnd++;
+            workspace[workspaceIndex++] = data[dataEnd++];
         }
 
         System.arraycopy(workspace, 0, data, start, workspaceLength);
+    }
 
+    static int copyToWorkspace(int[] workspace, int workspaceIndex, int[] data, Supplier<Integer> getter, Consumer<Integer> setter) {
+        int dataStart = getter.get();
+        workspace[workspaceIndex] = data[dataStart];
+        setter.accept(dataStart + 1);
+        return workspaceIndex + 1;
     }
 }
