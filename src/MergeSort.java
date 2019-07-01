@@ -45,11 +45,4 @@ public class MergeSort {
 
         System.arraycopy(workspace, 0, data, start, workspaceLength);
     }
-
-    static int copyToWorkspace(int[] workspace, int workspaceIndex, int[] data, Supplier<Integer> getter, Consumer<Integer> setter) {
-        int dataStart = getter.get();
-        workspace[workspaceIndex] = data[dataStart];
-        setter.accept(dataStart + 1);
-        return workspaceIndex + 1;
-    }
 }
