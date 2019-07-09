@@ -2,28 +2,31 @@ public class QuickSort {
     public static int[] Sort(int[] ints) {
         if(ints.length == 2) {
             if (ints[0] > ints[1]) {
-                int temp = ints[0];
-                ints[0] = ints[1];
-                ints[1] = temp;
+                swap(ints, 0, 1);
+
             }
         } else {
             int low = 0;
-            int pivot = ints[ints.length - 1];
+            int pivot = ints.length - 1;
             int high = pivot - 1;
 
             for(int i = low; i <= high - 1; i++) {
-                if(ints[low] >= pivot && ints[high] <= pivot) {
-                    int temp = ints[high];
-                    ints[high] = ints[low];
-                    ints[low] = temp;
+                if(ints[low] >= ints[pivot] && ints[high] <= ints[pivot]) {
+                    swap(ints, low, high);
                 }
             }
 
-            int temp = ints[high];
-            ints[high] = pivot;
-            ints[ints.length - 1] = temp;
+            if(ints[high] > ints[pivot]) {
+                swap(ints, high, pivot);
+            }
         }
 
         return ints;
+    }
+
+    static void swap(int[] ints, int a, int b) {
+        int temp = ints[b];
+        ints[b] = ints[a];
+        ints[a] = temp;
     }
 }
