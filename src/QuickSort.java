@@ -17,7 +17,7 @@ public class QuickSort {
         return ints;
     }
 
-    static void swap(int[] ints, int a, int b) {
+    private static void swap(int[] ints, int a, int b) {
         int temp = ints[b];
         ints[b] = ints[a];
         ints[a] = temp;
