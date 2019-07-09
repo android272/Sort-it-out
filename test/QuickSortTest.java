@@ -18,5 +18,6 @@ public class QuickSortTest {
     public void When_Quick_Sort_Is_Passed_An_Unsorted_Three_Element_Array_It_Returns_A_Sorted_Array() {
         assertArrayEquals(new int[] { 1, 2, 3 }, QuickSort.Sort(new int[] { 1, 3, 2 }));
         assertArrayEquals(new int[] { 1, 2, 3 }, QuickSort.Sort(new int[] { 3, 1, 2 }));
+        assertArrayEquals(new int[] { 1, 2, 3 }, QuickSort.Sort(new int[] { 3, 2, 1 }));
     }
 }
