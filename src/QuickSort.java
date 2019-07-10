@@ -2,17 +2,17 @@ public class QuickSort {
     public static int[] Sort(int[] ints) {
         int low = 0;
         int high = ints.length - 1;
-        int pivot =  high;
-        int j = low -1;
+        int indexOfPivotValue =  high;
+        int indexOfValuesGreaterThanPivot = low -1;
 
-        for(int i = low; i <= high - 1; i++) {
-            if(ints[i] <= ints[pivot]) {
-                j++;
-                swap(ints, i, j);
+        for(int indexOfValuesLessThanPivot = low; indexOfValuesLessThanPivot <= high - 1; indexOfValuesLessThanPivot++) {
+            if(ints[indexOfValuesLessThanPivot] <= ints[indexOfPivotValue]) {
+                indexOfValuesGreaterThanPivot++;
+                swap(ints, indexOfValuesLessThanPivot, indexOfValuesGreaterThanPivot);
             }
         }
 
-        swap(ints, j + 1 , pivot);
+        swap(ints, indexOfValuesGreaterThanPivot + 1 , indexOfPivotValue);
 
         return ints;
     }
