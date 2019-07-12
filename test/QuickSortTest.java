@@ -27,4 +27,10 @@ public class QuickSortTest {
         assertArrayEquals(new int[] { 1, 2, 3, 4, 5, 6 }, QuickSort.Sort(new int[] { 6, 3, 1, 5, 2, 4 }));
         assertArrayEquals(new int[] { 1, 2, 3, 4, 5, 6 }, QuickSort.Sort(new int[] { 6, 5, 4, 3, 2, 1 }));
     }
+
+    @Test
+    public void When_Quick_Sort_Is_Passed_An_Unsorted_Array_With_Duplicate_Values_It_Returns_A_Sorted_Array() {
+        assertArrayEquals(new int[] { 1, 2, 3, 3, 5, 6 }, QuickSort.Sort(new int[] { 1, 5, 3, 6, 3, 2 }));
+
+    }
 }
