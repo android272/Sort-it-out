@@ -1,20 +1,31 @@
 public class QuickSort {
     public static int[] Sort(int[] ints) {
-        int low = 0;
-        int high = ints.length - 1;
-        int indexOfPivotValue =  high;
-        int indexOfValuesGreaterThanPivot = low -1;
+        sort(ints, 0, ints.length - 1);
 
-        for(int indexOfValuesLessThanPivot = low; indexOfValuesLessThanPivot <= high - 1; indexOfValuesLessThanPivot++) {
-            if(ints[indexOfValuesLessThanPivot] <= ints[indexOfPivotValue]) {
-                indexOfValuesGreaterThanPivot++;
-                swap(ints, indexOfValuesLessThanPivot, indexOfValuesGreaterThanPivot);
+        return ints;
+    }
+
+    private static void sort(int[] ints, int low, int high) {
+        if(low < high) {
+            int midpoint = partition(ints, low, high);
+            sort(ints, low, midpoint);
+            sort(ints, midpoint + 1, high);
+        }
+    }
+
+    private static int partition(int[] ints, int low, int high) {
+        int pivot = high;
+        int indexGreaterThanPivot = low - 1;
+
+        for (int indexLesserThanPivot = low; indexLesserThanPivot <= high - 1; indexLesserThanPivot++) {
+            if (ints[indexLesserThanPivot] <= ints[pivot]) {
+                indexGreaterThanPivot++;
+                swap(ints, indexLesserThanPivot, indexGreaterThanPivot);
             }
         }
 
-        swap(ints, indexOfValuesGreaterThanPivot + 1 , indexOfPivotValue);
-
-        return ints;
+        swap(ints, indexGreaterThanPivot + 1, pivot);
+        return (indexGreaterThanPivot + 1);
     }
 
     private static void swap(int[] ints, int a, int b) {
