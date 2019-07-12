@@ -25,7 +25,7 @@ public class QuickSort {
         }
 
         swap(ints, indexGreaterThanPivot + 1, pivot);
-        return (indexGreaterThanPivot + 1);
+        return (indexGreaterThanPivot);
     }
 
     private static void swap(int[] ints, int a, int b) {
